@@ -3,6 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import { reactive } from 'vue';
 import { Inertia } from '@inertiajs/inertia'
+import BreezeValidationErrors from '@/Components/ValidationErrors.vue'
 
 defineProps({
     errors: Object
@@ -28,7 +29,7 @@ const storeItem = () => {
                 商品登録
             </h2>
         </template>
-
+        
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -38,6 +39,7 @@ const storeItem = () => {
                                 <div class="container px-5 py-8 mx-auto">
                                     <div class="lg:w-1/2 md:w-2/3 mx-auto">
                                     <div class="flex flex-wrap -m-2">
+                                        <BreezeValidationErrors :errors="errors" />
                                         <div class="p-2 w-full">
                                         <div class="relative">
                                             <label for="name" class="leading-7 text-sm text-gray-600">商品名</label>

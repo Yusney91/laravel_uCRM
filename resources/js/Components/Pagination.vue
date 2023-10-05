@@ -1,7 +1,9 @@
-<script>
-import { ref } from 'vue';
+<script setup>
 import { Link } from '@inertiajs/inertia-vue3';
-defineProps({ links: Array });
+
+defineProps({ links: [] });
+
+
 </script>
 
 <template>
@@ -12,7 +14,7 @@ defineProps({ links: Array });
                 
                 <Link v-else 
                 class="mr-1 mb-1 px-4 py-3 text-sm leading border rounded hober:bg-white focus:border-indigo-500" 
-                :class="{'bg-blue-700 text-white':link.active}" :href="link.url"  />
+                :class="{'bg-blue-700 text-white':link.active}" :href="link.url" v-html="link.label" />
             </template>
         </div>
     </div>

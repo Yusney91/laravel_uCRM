@@ -1,10 +1,10 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head } from '@inertiajs/inertia-vue3';
 import { reactive } from 'vue';
 import { Inertia } from '@inertiajs/inertia'
 import { Core as YubinBangoCore } from "yubinbango-core2";
-
+import BreezeValidationErrors from '@/Components/ValidationErrors.vue'
 defineProps({
     errors: Object
 })
@@ -51,6 +51,7 @@ const storeCustomer = () => {
                                 <div class="container px-5 py-8 mx-auto">
                                     <div class="lg:w-1/2 md:w-2/3 mx-auto">
                                     <div class="flex flex-wrap -m-2">
+                                        <BreezeValidationErrors :errors="errors" />
                                         <div class="p-2 w-full">
                                         <div class="relative">
                                             <label for="name" class="leading-7 text-sm text-gray-600">顧客名</label>
